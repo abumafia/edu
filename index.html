@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #2c3e50, #4ca1af);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+        .hero {
+            margin-top: 100px;
+            padding: 100px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero h2 {
+            font-size: 42px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background: #ffcc00;
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduHero</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="courses.html">Kurslar</a></li>
+                <li><a href="teachers.html">O'qituvchilar</a></li>
+                <li><a href="contact.html">Bog'lanish</a></li>
+                <li><a href="login.html">Kirish</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Online Ta'lim Platformasiga Xush Kelibsiz</h2>
+        <p>Eng yaxshi o'qituvchilardan ta'lim oling va kelajagingizni yarating!</p>
+        <a href="register.html" class="btn">Ro‘yxatdan o‘tish</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 EduHero. HALLAYM LLC. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</body>
+</html>
