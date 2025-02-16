@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O‘qituvchilar Sahifasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+        .info {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn {
+            background: linear-gradient(145deg, #27b39d, #21897e);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            background: #1a7569;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .logout-btn {
+            margin-top: 20px;
+            background: red;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .logout-btn:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📚 O‘qituvchilar Paneli</h2>
+        <p class="info" id="teacher-info">🔄 Ma'lumot yuklanmoqda...</p>
+
+        <div class="buttons">
+            <button class="btn" onclick="manageStudents()">📋 Talabalarni boshqarish</button>
+            <button class="btn" onclick="uploadVideo()">🎥 Video dars joylash</button>
+            <button class="btn" onclick="monitorPerformance()">📊 Baholash va natijalar</button>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">🚪 Chiqish</button>
+    </div>
+
+    <script>
+        // LocalStorage-dan ma'lumotlarni yuklash
+        function loadTeacherInfo() {
+            let user = JSON.parse(localStorage.getItem("user"));
+            if (user && user.role === "O‘qituvchi") {
+                document.getElementById("teacher-info").innerHTML = 
+                    `🏫 ${user.region} | 📍 ${user.district} | 🏫 ${user.school} | 📖 ${user.subject}`;
+            } else {
+                document.getElementById("teacher-info").innerHTML = "Ma'lumot topilmadi!";
+            }
+        }
+
+        function manageStudents() {
+            alert("Talabalarni boshqarish bo‘limi hali tayyor emas!");
+        }
+
+        function uploadVideo() {
+            alert("Video yuklash bo‘limi tez orada qo‘shiladi!");
+        }
+
+        function monitorPerformance() {
+            alert("Baholash va natijalar bo‘limi hali ishlab chiqilmoqda!");
+        }
+
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "index.html";
+        }
+
+        loadTeacherInfo();
+    </script>
+
+</body>
+</html>
