@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #1e3c72;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2a5298;
+        }
+        .toggle {
+            margin-top: 10px;
+            color: #555;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 id="formTitle">Ro'yxatdan o'tish</h2>
+        <form id="registerForm">
+            <input type="text" id="fullName" placeholder="Ism Familiya" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Parol" required>
+            <select id="role">
+                <option value="oquvchi">O'quvchi</option>
+                <option value="talaba">Talaba</option>
+                <option value="oqituvchi">O'qituvchi</option>
+            </select>
+            <input type="text" id="extraInfo" placeholder="Sinf, yo'nalish yoki maktab" required>
+            <button type="submit">Ro'yxatdan o'tish</button>
+        </form>
+
+        <form id="loginForm" style="display: none;">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Parol" required>
+            <button type="submit">Kirish</button>
+        </form>
+
+        <div class="toggle" id="toggleForm">Tizimga kirish</div>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById("registerForm");
+        const loginForm = document.getElementById("loginForm");
+        const toggleForm = document.getElementById("toggleForm");
+        const formTitle = document.getElementById("formTitle");
+
+        toggleForm.addEventListener("click", () => {
+            if (registerForm.style.display === "none") {
+                registerForm.style.display = "block";
+                loginForm.style.display = "none";
+                formTitle.innerText = "Ro'yxatdan o'tish";
+                toggleForm.innerText = "Tizimga kirish";
+            } else {
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+                formTitle.innerText = "Tizimga kirish";
+                toggleForm.innerText = "Ro'yxatdan o'tish";
+            }
+        });
+
+        registerForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let userData = {
+                fullName: document.getElementById("fullName").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                role: document.getElementById("role").value,
+                extraInfo: document.getElementById("extraInfo").value
+            };
+
+            localStorage.setItem("user", JSON.stringify(userData));
+            alert("Muvaffaqiyatli ro'yxatdan o'tdingiz!");
+            toggleForm.click();
+        });
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let storedUser = JSON.parse(localStorage.getItem("user"));
+            let email = document.getElementById("loginEmail").value;
+            let password = document.getElementById("loginPassword").value;
+
+            if (storedUser && email === storedUser.email && password === storedUser.password) {
+                alert("Muvaffaqiyatli kirdingiz!");
+
+                if (storedUser.role === "oquvchi") {
+                    window.location.href = "oquvchi.html";
+                } else if (storedUser.role === "talaba") {
+                    window.location.href = "talaba.html";
+                } else if (storedUser.role === "oqituvchi") {
+                    window.location.href = "oqituvchi.html";
+                }
+            } else {
+                alert("Xato email yoki parol!");
+            }
+        });
+    </script>
+
+</body>
+</html>
