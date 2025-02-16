@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iqtisod Bo‘limi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9800, #e65100);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .course-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            width: 220px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .course-card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid white;
+        }
+        .course-card p {
+            font-size: 18px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📊 Iqtisod Bo‘limi</h2>
+
+    <div class="courses-container">
+        <div class="course-card" onclick="navigateTo('makroiqtisod.html')">
+            <img src="macro.png" alt="Makroiqtisod">
+            <p>📈 Makroiqtisod</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('mikroiqtisod.html')">
+            <img src="micro.png" alt="Mikroiqtisod">
+            <p>📉 Mikroiqtisod</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('biznes.html')">
+            <img src="business.png" alt="Biznes">
+            <p>🏢 Biznes va Investitsiya</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('buxgalteriya.html')">
+            <img src="accounting.png" alt="Buxgalteriya">
+            <p>💰 Buxgalteriya</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('moliyaviy_bozorlar.html')">
+            <img src="finance.png" alt="Moliyaviy bozorlar">
+            <p>💹 Moliyaviy Bozorlar</p>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

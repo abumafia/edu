@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huquq Bo‘limi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #3F51B5, #1A237E);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .course-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            width: 220px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .course-card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid white;
+        }
+        .course-card p {
+            font-size: 18px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>⚖️ Huquq Bo‘limi</h2>
+
+    <div class="courses-container">
+        <div class="course-card" onclick="navigateTo('konstitutsiya.html')">
+            <img src="constitution.png" alt="Konstitutsiya">
+            <p>📜 Konstitutsiya va Huquq</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('fuqarolik_huquqi.html')">
+            <img src="civil-law.png" alt="Fuqarolik huquqi">
+            <p>⚖️ Fuqarolik Huquqi</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('jinoiy_huquq.html')">
+            <img src="criminal-law.png" alt="Jinoiy huquq">
+            <p>🚔 Jinoiy Huquq</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('xalqaro_huquq.html')">
+            <img src="international-law.png" alt="Xalqaro huquq">
+            <p>🌍 Xalqaro Huquq</p>
+        </div>
+
+        <div class="course-card" onclick="navigateTo('ish_huquqi.html')">
+            <img src="labor-law.png" alt="Mehnat huquqi">
+            <p>🏢 Mehnat Huquqi</p>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

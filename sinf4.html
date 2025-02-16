@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-sinf Fanlari</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #ffba00);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .subjects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .subject-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .subject-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .subject-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid white;
+        }
+        .subject-card p {
+            font-size: 18px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📚 4-Sinf Fanlari</h2>
+
+    <div class="subjects-container">
+        <div class="subject-card" onclick="navigateTo('matematika4.html')">
+            <img src="math.png" alt="Matematika">
+            <p>📐 Matematika</p>
+        </div>
+
+        <div class="subject-card" onclick="navigateTo('onatili4.html')">
+            <img src="language.png" alt="Ona Tili">
+            <p>📖 Ona Tili</p>
+        </div>
+
+        <div class="subject-card" onclick="navigateTo('tarix4.html')">
+            <img src="history.png" alt="Tarix">
+            <p>🏛 Tarix</p>
+        </div>
+
+        <div class="subject-card" onclick="navigateTo('texnologiya4.html')">
+            <img src="technology.png" alt="Texnologiya">
+            <p>🔧 Texnologiya</p>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>
